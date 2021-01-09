@@ -18,7 +18,7 @@ function parse (text, reviver, options) {
   const constructorAction = options.constructorAction || 'error'
 
   // BOM checker
-  if (text && text.charCodeAt(0) === 0xFEFF) {
+  if (text && text.charCodeAt && text.charCodeAt(0) === 0xFEFF) {
     text = text.slice(1)
   }
 

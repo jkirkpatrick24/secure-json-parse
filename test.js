@@ -36,6 +36,14 @@ test('parse', t => {
     t.end()
   })
 
+  t.test('parses buffer', t => {
+    t.strictEqual(
+      j.parse(Buffer.from('"X"')),
+      JSON.parse(Buffer.from('"X"'))
+    )
+    t.end()
+  })
+
   t.test('parses object string (reviver)', t => {
     const reviver = (key, value) => {
       return typeof value === 'number' ? value + 1 : value
